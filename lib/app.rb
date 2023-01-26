@@ -11,7 +11,7 @@ post "/upload" do
     @filename = params[:video][:filename]
     video_path = File.join(UPLOADS_PATH, @filename)
     FileUtils.mkdir_p(UPLOADS_PATH)
-    File.binwrite(video_path, params[:video][:tempfile].read)
+    IO.copy_stream(params[:video][:tempfile].open, video_path)
   end
 
   erb :video
