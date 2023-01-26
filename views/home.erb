@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Upload Video</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="javascript/home.js"></script>
+    <link rel="stylesheet" href="css/simple.css">
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+
+  <body>
+    <div id="videos"></div>
+
+    <h1 style="margin-bottom:0.4em">Upload A Video</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="video" accept="video/*" required>
+      <br>
+      <input type="submit" value="Upload" style="width:250px">
+    </form>
+  </body>
+</html>
