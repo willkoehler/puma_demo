@@ -27,3 +27,8 @@ compare it to proposed changes in PR https://github.com/puma/puma/pull/3062
 - Restart the app and repeat steps above. You will noticed that memory stays fixed during
   the upload.
 
+### Testing using `curl` and memory logging from `puma_worker_killer`
+
+- Run the app with puma_worker_killer: `bundle exec puma -p 3000 --config puma.rb -w 1`
+- Send a POST request with curl: `curl --form "video=@your_video.mp4" --limit-rate 10M http://localhost:3000/upload`
+- Puma will log memory usage in the console
